@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="content-aligned">
+        <app-postcode (checkPostcode)="checkPostcode($event)" (clearPostcode)="clearPostcode()"></app-postcode>
+        
+        <app-map [map]="map$" *ngIf="hasResults()"></app-map>
+
+        <div *ngIf="hasError()" class="error-container">
+            {{ errorMessage }}
+            <a class="dismiss-error" (click)="dismissError()">x</a>
+        </div>
+    </div>
+</div>
